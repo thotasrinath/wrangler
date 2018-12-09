@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "spec-version": "1.6"
+  },
+  "configuration-groups": [
+    {
+      "label" : "Input Selection and Prefilters",
+      "properties" : [
+        {
+          "widget-type" : "hidden",
+          "name" : "workspace"
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Input field name",
+          "name": "field",
+          "widget-attributes" : {
+            "default": "*"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Precondition",
+          "name": "precondition",
+          "widget-attributes" : {
+            "default" : "false"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Directives",
+      "properties": [
+        {
+          "widget-type": "wrangler-directives",
+          "label": "Recipe",
+          "name": "directives",
+          "widget-attributes" : {
+            "placeholder" : "#pragma load-directives my-directive; my-directive :body;"
+          }
+        },
+        {
+          "widget-type": "csv",
+          "label": "User Defined Directives(UDD)",
+          "name": "udd"
+        }
+      ]
+    },
+    {
+      "label" : "Failure Conditions and Handling",
+      "properties" : [
+        {
+          "widget-type": "textbox",
+          "label" : "Failure Threshold",
+          "name": "threshold",
+          "widget-attributes": {
+            "default": "1"
+          }
+        }
+      ]
+    }
+  ],
+  "emit-alerts": true,
+  "emit-errors": true,
+  "outputs": [
+    {
+      "name": "schema",
+      "label": "schema",
+      "widget-type": "schema",
+      "widget-attributes": {
+        "schema-types": [
+          "boolean",
+          "int",
+          "long",
+          "float",
+          "double",
+          "bytes",
+          "string",
+          "array",
+          "enum",
+          "record",
+          "map",
+          "union"
+        ],
+        "schema-default-type": "string",
+        "property-watch": "format"
+      }
+    }
+  ]
+}
